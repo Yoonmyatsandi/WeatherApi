@@ -46,43 +46,45 @@ document.querySelector(".search-bar").addEventListener("keyup", function(event){
 });
 
 function fetchUnsplashImage(weatherDescription) {
-    let photoKeyword = "";
-  
-    switch (weatherDescription.toLowerCase()) {
-      case "clear sky":
-        photoKeyword = "sunny";
-        break;
-      case "few clouds":
-      case "scattered clouds":
-      case "broken clouds":
-        photoKeyword = "cloudy";
-        break;
-      case "overcast clouds":
-        photoKeyword = "cloudy";
-        break;
-      case "shower rain":
-      case "rain":
-      case "thunderstorm":
-        photoKeyword = "rain";
-        break;
-      case "light rain":
-      case "moderate rain":
-      case "thunderstorm with light rain": 
-        photoKeyword = "light-rain";
-        break;
-      case "snow":
-        photoKeyword = "snow";
-        break;
-      case "mist":
-        photoKeyword = "mist";
-        break;
-      default:
-        photoKeyword = "default";
-        break;
-    }
-  
-    const imageUrl = `https://source.unsplash.com/1600x900/?${photoKeyword}`;
-    const unsplashImage = document.getElementById("unsplash-image");
-    unsplashImage.src = imageUrl;
+  let photoKeyword = "";
+
+  switch (weatherDescription.toLowerCase()) {
+    case "clear sky":
+      photoKeyword = "sunny";
+      break;
+    case "few clouds":
+    case "scattered clouds":
+    case "broken clouds":
+      photoKeyword = "cloudy";
+      break;
+    case "overcast clouds":
+      photoKeyword = "cloudy";
+      break;
+    case "shower rain":
+    case "rain":
+    case "thunderstorm":
+      photoKeyword = "rain";
+      break;
+    case "light rain":
+    case "moderate rain":
+    case "thunderstorm with light rain":
+      photoKeyword = "light-rain";
+      break;
+    case "heavy intensity rain": 
+      photoKeyword = "heavy-rain";
+      break;
+    case "snow":
+      photoKeyword = "snow";
+      break;
+    case "mist":
+      photoKeyword = "mist";
+      break;
+    default:
+      photoKeyword = "default";
+      break;
   }
-  
+
+  const imageUrl = `https://source.unsplash.com/1600x900/?${photoKeyword}`;
+  const unsplashImage = document.getElementById("unsplash-image");
+  unsplashImage.src = imageUrl;
+}
